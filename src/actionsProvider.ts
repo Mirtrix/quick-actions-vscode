@@ -9,9 +9,13 @@ export class ActionsProvider
 
   getChildren(element?: ICommandSerialized): Thenable<ICommandSerialized[]> {
     if (!element) {
-      return Promise.resolve(
-        vscode.workspace.getConfiguration("quick-actions")["customActions"]
-      );
+      const allActions: ICommandSerialized[] =
+        vscode.workspace.getConfiguration("quick-actions")["customActions"];
+      const validActions = allActions.filter((x) => {
+        return "commands" in x && "label" in x;
+      });
+
+      return Promise.resolve(validActions);
     }
 
     return Promise.resolve([]);
