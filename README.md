@@ -6,13 +6,15 @@ We all have our share of terminal commands that we have to use repeatedly in our
 
 You can save terminal commands and organize them in the Actions panel on the Explorer tab. Commands can be parametrized. You can configure your actions in the `setttings.json`.
 
-\!\[preview\]\(docs/action-panel.png\)
+![preview](/docs/action-panel.png)
 
 > This extension comes pre-populated with a couple of example actions. For a more detailed guide look in the 'Settings' section.
 
 ## Extension Settings
 
 This extension has only one setting - `quick-actions.customActions` - a list of json objects.
+
+### Action object structure
 
 Every action describes as a json-object and must have the following two properties:
 
@@ -23,6 +25,41 @@ Additionaly, you may provide the following properties to customize the look of y
 
 - `color: string`: action icon color from [vscode theme colors](https://code.visualstudio.com/api/references/theme-color), defaults to `icon.foreground`;
 - `icon: string`: action icon from [vscode icons](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing), defaults to `zap`. Be sure to use values from 'identifier' column of the 'Icon Listing' table.
+
+### Command parameters
+
+Currently the following parameters are supported:
+
+- `${workspaceDir}`: workspace directory name, open workspace required;
+- `${workspaceDir}`: absolute path to the workspace directory, open workspace required;
+- `${file}`: the name of the currently opened file, an open file is required.
+
+### Default actions
+
+Theese are default actions that will greet you once you install this extension.
+
+```json
+[
+  {
+    "label": "Hello World!",
+    "icon": "octoface",
+    "iconColor": "errorForeground",
+    "commands": ["cd ..", "ls"]
+  },
+  {
+    "label": "Echo variables",
+    "icon": "zap",
+    "iconColor": "editorLightBulb.foreground",
+    "commands": ["echo ${workspaceDir}", "echo ${workspacePath}"]
+  },
+  {
+    "label": "Cat current file",
+    "icon": "output-view-icon",
+    "iconColor": "testing.runAction",
+    "commands": ["cat ${file}"]
+  }
+]
+```
 
 ## Known Issues
 
