@@ -55,4 +55,14 @@ export const parameters: CommandParameter[] = [
 
     return filename;
   }),
+  new CommandParameter("filePath", (param: string) => {
+    // No active workspace
+    if (!vscode.window.activeTextEditor) {
+      throw new exceptions.NoActiveFileError(param);
+    }
+
+    const filename = vscode.window.activeTextEditor.document.uri.fsPath;
+
+    return filename;
+  }),
 ];

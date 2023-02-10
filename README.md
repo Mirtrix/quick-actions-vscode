@@ -33,6 +33,7 @@ Currently the following parameters are supported:
 - `${workspaceDir}`: workspace directory name, open workspace required;
 - `${workspaceDir}`: absolute path to the workspace directory, open workspace required;
 - `${file}`: the name of the currently opened file, an open file is required.
+- `${filePath}`: the absolute pat of the currently opened file, an open file is required.
 
 ### Default actions
 
