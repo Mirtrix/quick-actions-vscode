@@ -24,7 +24,7 @@
       "properties": {
         "quick-actions.customActions": {
           "type": [
-            "object"
+            "array"
           ],
           "default": [
             {
@@ -50,7 +50,7 @@
               "icon": "output-view-icon",
               "iconColor": "testing.runAction",
               "commands": [
-                "cat ${file}"
+                "cat ${filePath}"
               ]
             }
           ],
