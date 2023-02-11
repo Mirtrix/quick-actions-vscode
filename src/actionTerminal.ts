@@ -25,7 +25,8 @@ export class ActionTerminal {
   }
 
   static run(command: string) {
-    this.getTerminal().sendText(command, true);
+    const terminal = this.getTerminal();
+    terminal.sendText(command, true);
   }
 
   static dispose() {

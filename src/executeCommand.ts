@@ -10,6 +10,8 @@ function buildCommand(line: string) {
 }
 
 export const executeCommandHandler = (commandLines: string[]) => {
+  ActionTerminal.getTerminal().show();
+
   try {
     for (const line of commandLines) {
       ActionTerminal.run(buildCommand(line));
