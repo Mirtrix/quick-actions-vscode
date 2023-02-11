@@ -6,6 +6,13 @@
   "version": "1.0.0",
   "license": "MIT",
   "repository": "https://github.com/Mirtrix/quick-actions-vscode",
+  "icon": "icon.png",
+  "keywords": [
+    "automate",
+    "quick",
+    "action",
+    "commands"
+  ],
   "engines": {
     "vscode": "^1.75.0"
   },
