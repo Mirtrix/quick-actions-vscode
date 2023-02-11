@@ -32,7 +32,7 @@ Currently the following parameters are supported:
 
 - `${workspaceDir}`: workspace directory name, open workspace required;
 - `${workspacePath}`: absolute path to the workspace directory, open workspace required;
-- `${file}`: the name of the currently opened file, an open file is required.
+- `${file}`: the name of the currently opened file, an open file is required;
 - `${filePath}`: the absolute pat of the currently opened file, an open file is required.
 
 ### Default actions
@@ -64,5 +64,4 @@ Theese are default actions that will greet you once you install this extension.
 
 ## Known Issues
 
-- Sometimes when you close a dedicated terminal, two more open, then four, then eight. You get the idea. I'm working on it and will fix it as soon as possible.
-- The terminal will open when performing a new action if it is created but minimized.
+None so far, but be sure to open an issue ticket in GitHub if you encounter any.
