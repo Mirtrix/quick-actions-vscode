@@ -23,9 +23,32 @@
       "title": "Quick Actions",
       "properties": {
         "quick-actions.customActions": {
-          "type": [
-            "array"
-          ],
+          "type": "array",
+          "items": {
+            "type": "object",
+            "title": "Action",
+            "properties": {
+              "label": {
+                "type": "string",
+                "description": "Name of the action that will be displayed."
+              },
+              "commands": {
+                "type": "array",
+                "description": "Command lines that will be executed in terminal.",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "icon": {
+                "type": "string",
+                "description": "Action icon from vscode icons. See reference in readme."
+              },
+              "iconColor": {
+                "type": "string",
+                "description": "Action icon color from vscode theme colors. See reference in readme."
+              }
+            }
+          },
           "default": [
             {
               "label": "Hello World!",
