@@ -2,6 +2,8 @@
 
 We all have our share of terminal commands that we have to use repeatedly in our work. While some of them may not be as annoying to type or can be automated with other extensions, there's always that pesky script two directories up that you have to call twenty times a day. This little extension is my attempt to make my workflow easier and maybe help others.
 
+You can get it at [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=Mirtrix.quick-actions)!
+
 ## Features
 
 You can save terminal commands and organize them in the Actions panel on the Explorer tab. Commands can be parametrized. You can configure your actions in the `setttings.json`.
