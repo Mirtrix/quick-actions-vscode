@@ -17,10 +17,27 @@ export function activate(context: vscode.ExtensionContext) {
   );
   context.subscriptions.push(executeCommand);
 
+  const actionsProvider = new ActionsProvider();
   vscode.window.registerTreeDataProvider(
     "quick-actions.actionPanel",
-    new ActionsProvider()
+    actionsProvider
   );
+
+  vscode.workspace.onDidChangeConfiguration((event) => {
+    // No active workspace
+    if (!vscode.workspace.workspaceFolders) {
+      return;
+    }
+
+    const needRefresh = event.affectsConfiguration(
+      "quick-actions.customActions",
+      vscode.workspace.workspaceFolders[0].uri
+    );
+
+    if (needRefresh) {
+      actionsProvider.refresh();
+    }
+  });
 }
 
 // This method is called when your extension is deactivated

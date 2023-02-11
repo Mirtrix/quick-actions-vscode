@@ -3,6 +3,17 @@ import * as vscode from "vscode";
 export class ActionsProvider
   implements vscode.TreeDataProvider<ICommandSerialized>
 {
+  private _onDidChangeTreeData: vscode.EventEmitter<
+    ICommandSerialized | undefined | null | void
+  > = new vscode.EventEmitter<ICommandSerialized | undefined | null | void>();
+  readonly onDidChangeTreeData: vscode.Event<
+    ICommandSerialized | undefined | null | void
+  > = this._onDidChangeTreeData.event;
+
+  refresh(): void {
+    this._onDidChangeTreeData.fire();
+  }
+
   getTreeItem(element: ICommandSerialized): vscode.TreeItem {
     return new CustomActionItem(element);
   }
