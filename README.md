@@ -39,7 +39,7 @@ Currently the following parameters are supported:
 
 ### Default actions
 
-Theese are default actions that will greet you once you install this extension.
+These are default actions that will greet you once you install this extension.
 
 ```json
 [
@@ -66,4 +66,4 @@ Theese are default actions that will greet you once you install this extension.
 
 ## Known Issues
 
-None so far, but be sure to open an issue ticket in GitHub if you encounter any.
+None so far, but be sure to open a GitHub issue if you encounter any.
