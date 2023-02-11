@@ -13,7 +13,10 @@ export class ActionTerminal {
       ActionTerminal.currentTerminal.show(true);
 
       vscode.window.onDidCloseTerminal((event) => {
-        if (this.getTerminal() && event.name === ActionTerminal.terminalName) {
+        if (event.name === ActionTerminal.terminalName) {
+          if (this.currentTerminal) {
+            this.currentTerminal.dispose();
+          }
           ActionTerminal.currentTerminal = undefined;
         }
       });
