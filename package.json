@@ -2,7 +2,7 @@
   "name": "quick-actions",
   "publisher": "mirtrix",
   "displayName": "Quick Actions",
-  "description": "VSCode exstensions to automate mundane tasks",
+  "description": "VSCode exstension to automate mundane tasks",
   "version": "1.0.1",
   "license": "MIT",
   "repository": "https://github.com/Mirtrix/quick-actions-vscode",
