@@ -64,4 +64,5 @@ Theese are default actions that will greet you once you install this extension.
 
 ## Known Issues
 
-- Tell me about them!
+- Sometimes when you close a dedicated terminal, two more open, then four, then eight. You get the idea. I'm working on it and will fix it as soon as possible.
+- The terminal will open when performing a new action if it is created but minimized.
