@@ -35,7 +35,8 @@ Currently the following parameters are supported:
 - `${workspaceDir}`: workspace directory name, open workspace required;
 - `${workspacePath}`: absolute path to the workspace directory, open workspace required;
 - `${file}`: the name of the currently opened file, an open file is required;
-- `${filePath}`: the absolute pat of the currently opened file, an open file is required.
+- `${filePath}`: the absolute path of the currently opened file, an open file is required.
+- `${filePathRelative}`: the path of the currently opened file relative to workspace root, an open file is required.
 - `${line}`: cursor line in the currently opened file, an open file is required.
 - `${column}`: cursor column in the currently opened file, an open file is required.
 
