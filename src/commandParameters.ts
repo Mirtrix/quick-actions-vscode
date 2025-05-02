@@ -43,7 +43,7 @@ export const parameters: CommandParameter[] = [
     return workspacePath;
   }),
   new CommandParameter("file", (param: string) => {
-    // No active workspace
+    // No active file editor
     if (!vscode.window.activeTextEditor) {
       throw new exceptions.NoActiveFileError(param);
     }
@@ -56,7 +56,7 @@ export const parameters: CommandParameter[] = [
     return filename;
   }),
   new CommandParameter("filePath", (param: string) => {
-    // No active workspace
+    // No active file editor
     if (!vscode.window.activeTextEditor) {
       throw new exceptions.NoActiveFileError(param);
     }
@@ -64,5 +64,43 @@ export const parameters: CommandParameter[] = [
     const filename = vscode.window.activeTextEditor.document.uri.fsPath;
 
     return filename;
+  }),
+  new CommandParameter("filePathRelative", (param: string) => {
+    // No active workspace
+    if (!vscode.workspace.workspaceFolders) {
+      throw new exceptions.NoActiveWorkspaceError(param);
+    }
+    // No active file editor
+    if (!vscode.window.activeTextEditor) {
+      throw new exceptions.NoActiveFileError(param);
+    }
+
+    const filePath = vscode.window.activeTextEditor.document.uri.fsPath;
+    const workspacePath = vscode.workspace.workspaceFolders[0].uri.fsPath;
+
+    const relativePath = filePath.replace(workspacePath, "");
+    return relativePath;
+  }),
+  new CommandParameter("line", (param: string) => {
+    // No active workspace
+    if (!vscode.window.activeTextEditor) {
+      throw new exceptions.NoActiveFileError(param);
+    }
+
+    const position = vscode.window.activeTextEditor.selection.active;
+    const lineNumber = position.line + 1;
+
+    return lineNumber + "";
+  }),
+  new CommandParameter("column", (param: string) => {
+    // No active workspace
+    if (!vscode.window.activeTextEditor) {
+      throw new exceptions.NoActiveFileError(param);
+    }
+
+    const position = vscode.window.activeTextEditor.selection.active;
+    const lineColumn = position.character + 1;
+
+    return lineColumn + "";
   }),
 ];
