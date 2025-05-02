@@ -65,4 +65,26 @@ export const parameters: CommandParameter[] = [
 
     return filename;
   }),
+  new CommandParameter("line", (param: string) => {
+    // No active workspace
+    if (!vscode.window.activeTextEditor) {
+      throw new exceptions.NoActiveFileError(param);
+    }
+
+    const position = vscode.window.activeTextEditor.selection.active;
+    const lineNumber = position.line + 1;
+
+    return lineNumber + "";
+  }),
+  new CommandParameter("column", (param: string) => {
+    // No active workspace
+    if (!vscode.window.activeTextEditor) {
+      throw new exceptions.NoActiveFileError(param);
+    }
+
+    const position = vscode.window.activeTextEditor.selection.active;
+    const lineColumn = position.character + 1;
+
+    return lineColumn + "";
+  }),
 ];
