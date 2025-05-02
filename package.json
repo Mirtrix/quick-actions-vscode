@@ -3,7 +3,7 @@
   "publisher": "mirtrix",
   "displayName": "Quick Actions",
   "description": "VSCode exstension to automate mundane tasks",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "license": "MIT",
   "repository": "https://github.com/Mirtrix/quick-actions-vscode",
   "icon": "icon.png",
